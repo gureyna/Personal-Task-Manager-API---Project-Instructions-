@@ -8,6 +8,8 @@ exports.writeTasksToFile = (tasks) => {
     fs.writeFileSync(filepath, JSON.stringify(tasks));
 }
 
+  //  const data = fs.readFileSync(filepath);
+   // return JSON.parse(data);
 exports.readTasksFromFile = () => {
     if (!fs.existsSync(filepath)) {
         this.writeTasksToFile([]);
