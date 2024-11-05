@@ -23,6 +23,8 @@ exports.createTask = (req, res) => {
 
         tasks.push(newTask);
         writeTasksToFile(tasks);
+       // res.writeHead(201, {'Content-Type': 'application/json'});
+       // res.end(JSON.stringify(newTask));
 
         if(files.image) {
             copyFileSync(files.image.path, path.join(__dirname, '../uploads', files.image.name));
@@ -39,6 +41,7 @@ exports.updateTask = (req, res) => {
         message: 'Update Task'
     }))
 }
+//exports.gettasks = (req, res) => {
 exports.deleteTask = (req, res) => {
     res.end(JSON.stringify({
         message: 'Delete Task'
