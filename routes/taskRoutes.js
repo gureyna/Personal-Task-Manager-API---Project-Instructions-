@@ -2,6 +2,8 @@
 const { gettasks, createTask, updateTask } = require("../controllers/taskController")
 
 const taskRoutes = (req,res)=>{
+
+   // const { files } = req;
     if (req.methd === 'GET'){
         gettasksasks(req, res)
     }else if (req.methd === 'POST'){
@@ -11,7 +13,9 @@ const taskRoutes = (req,res)=>{
     }else if (req.methd === 'DELETE'){
         deleteTask(req, res)
         
-    }else{
+    }
+    else{
+
         res.writeHead(404, {'Content-Type': 'application/json'});
         res.end(JSON.stringify({error: 'Not Found'}));
     }
