@@ -9,6 +9,8 @@ exports.createTask = (req, res) => {
             return;
         }
         const image = files.image[0]
+
+       // if (!fields.title) {
         
         const tasks = readTasksFromFile();
         const newTask = {
